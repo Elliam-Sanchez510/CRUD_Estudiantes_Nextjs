@@ -1,5 +1,3 @@
-import Image from 'next/image'
-import calcularNotas from './components/calcularNotas';
 import CalcularNotas from './components/calcularNotas';
 
 export default function Home() {

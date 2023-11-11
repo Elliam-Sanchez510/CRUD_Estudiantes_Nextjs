@@ -1,15 +1,6 @@
 'use client'
 import React, { useState } from 'react';
-import Resultado from '../components/resultado';
-
-interface Estudiante {
-    id: number;
-    nombre: string;
-    notaPrimerParcial: number;
-    notaSegundoParcial: number;
-    notaFinal: number;
-    aprobado: string;
-}
+import Resultado from './resultado';
 
 const CalcularNotas: React.FC = () => {
     const [nombre, setNombre] = useState<string>('');

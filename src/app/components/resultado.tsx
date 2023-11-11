@@ -1,15 +1,6 @@
 'use client'
 import React from 'react';
 
-interface Estudiante {
-    id: number;
-    nombre: string;
-    notaPrimerParcial: number;
-    notaSegundoParcial: number;
-    notaFinal: number;
-    aprobado: string;
-}
-
 interface ResultadoProps {
     estudiantes: Estudiante[];
     onEditar: (id: number) => void;
