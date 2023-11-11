@@ -1,6 +1,8 @@
 'use client'
 import React, { useState } from 'react';
 import Resultado from './resultado';
+import FormularioEstudiante from './formularioEstudiante';
+import CRUDEstudiantes from './crudEstudiante';
 
 const CalcularNotas: React.FC = () => {
     const [nombre, setNombre] = useState<string>('');
@@ -61,35 +63,22 @@ const CalcularNotas: React.FC = () => {
         <div className="container mx-auto p-4">
             <h1 className="text-4xl font-bold mb-8">CRUD de Estudiantes</h1>
 
-            <div className="mb-4 flex items-center">
-                <input
-                    type="text"
-                    placeholder="Nombre del estudiante"
-                    value={nombre}
-                    onChange={(e) => setNombre(e.target.value)}
-                    className="mr-2 px-2 py-1 border border-gray-300 rounded"
-                />
-                <input
-                    type="number"
-                    placeholder="Nota del primer parcial"
-                    value={notaPrimerParcial}
-                    onChange={(e) => setNotaPrimerParcial(parseFloat(e.target.value))}
-                    className="mr-2 px-2 py-1 border border-gray-300 rounded"
-                />
-                <input
-                    type="number"
-                    placeholder="Nota del segundo parcial"
-                    value={notaSegundoParcial}
-                    onChange={(e) => setNotaSegundoParcial(parseFloat(e.target.value))}
-                    className="mr-2 px-2 py-1 border border-gray-300 rounded"
-                />
-                <button
-                    onClick={agregarEstudiante}
-                    className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-700"
-                >
-                    {editando ? 'Editar' : 'Agregar'}
-                </button>
-            </div>
+            <FormularioEstudiante
+                nombre={nombre}
+                notaPrimerParcial={notaPrimerParcial}
+                notaSegundoParcial={notaSegundoParcial}
+                onNombreChange={setNombre}
+                onNotaPrimerParcialChange={setNotaPrimerParcial}
+                onNotaSegundoParcialChange={setNotaSegundoParcial}
+                onAgregarEstudiante={agregarEstudiante}
+                editando={editando}
+            />
+
+            <CRUDEstudiantes
+                estudiantes={estudiantes}
+                onEditar={editarEstudiante}
+                onEliminar={eliminarEstudiante}
+            />
 
             <Resultado estudiantes={estudiantes} onEditar={editarEstudiante} onEliminar={eliminarEstudiante} />
         </div>
