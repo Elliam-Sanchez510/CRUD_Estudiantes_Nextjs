@@ -2,18 +2,19 @@
 
 import React from 'react';
 
-const CRUDEstudiantes: React.FC<{
-    estudiantes: Estudiante[];
+interface CRUDEstudiantesProps {
+    estudiantes: Estudiante[]
     onEditar: (id: number) => void;
     onEliminar: (id: number) => void;
-}> = ({ estudiantes, onEditar, onEliminar }) => {
+}
+
+const CRUDEstudiantes: React.FC<CRUDEstudiantesProps> = ({ estudiantes, onEditar, onEliminar }) => {
     return (
         <div>
             {/* Renderizar la lista de estudiantes y botones de editar y eliminar */}
-            {estudiantes.map(estudiante => (
+            {estudiantes.map((estudiante) => (
                 <div key={estudiante.id}>
-                    <p>{estudiante.nombre}</p>
-                    <p>{estudiante.notaFinal}</p>
+                    {/* ... (código de la lista y botones) */}
                     <button onClick={() => onEditar(estudiante.id)}>Editar</button>
                     <button onClick={() => onEliminar(estudiante.id)}>Eliminar</button>
                 </div>

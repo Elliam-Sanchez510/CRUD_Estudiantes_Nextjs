@@ -1,7 +1,8 @@
-// FormularioEstudiante.tsx
+'use client'
+
 import React from 'react';
 
-const FormularioEstudiante: React.FC<{
+interface FormularioEstudianteProps {
     nombre: string;
     notaPrimerParcial: number;
     notaSegundoParcial: number;
@@ -10,7 +11,18 @@ const FormularioEstudiante: React.FC<{
     onNotaSegundoParcialChange: (value: number) => void;
     onAgregarEstudiante: () => void;
     editando: boolean;
-}> = ({ nombre, notaPrimerParcial, notaSegundoParcial, onNombreChange, onNotaPrimerParcialChange, onNotaSegundoParcialChange, onAgregarEstudiante, editando }) => {
+}
+
+const FormularioEstudiante: React.FC<FormularioEstudianteProps> = ({
+    nombre,
+    notaPrimerParcial,
+    notaSegundoParcial,
+    onNombreChange,
+    onNotaPrimerParcialChange,
+    onNotaSegundoParcialChange,
+    onAgregarEstudiante,
+    editando,
+}) => {
     return (
         <div className="mb-4 flex items-center">
             <input

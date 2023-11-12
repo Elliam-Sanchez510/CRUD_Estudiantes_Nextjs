@@ -1,4 +1,5 @@
-// Resultado.tsx
+'use client'
+
 import React from 'react';
 import TablaEstudiantes from './tablaEstudiantes';
 
