@@ -1,4 +1,4 @@
-import CalcularNotas from './components/calcularNotas';
+import CalcularNotas from './components/Estudiantes/calcularNotas';
 
 export default function Home() {
   return (

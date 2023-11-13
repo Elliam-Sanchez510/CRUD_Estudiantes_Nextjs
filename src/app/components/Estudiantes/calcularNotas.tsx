@@ -1,10 +1,9 @@
 'use client'
-
 import React from 'react';
-import useGestionEstudiantes from './data/useGestionEstudiantes';
+import useGestionEstudiantes from '../data/useGestionEstudiantes';
 import FormularioEstudiante from './formularioEstudiante';
-import CRUDEstudiantes from './crudEstudiante';
-import Resultado from './resultado';
+import CRUDEstudiantes from '../CRUDEstudiantes/crudEstudiante';
+import Resultado from '../Resultado/resultado';
 
 const CalcularNotas: React.FC = () => {
     const {
@@ -24,7 +23,6 @@ const CalcularNotas: React.FC = () => {
     return (
         <div className="container mx-auto p-4">
             <h1 className="text-4xl font-bold mb-8">CRUD de Estudiantes</h1>
-
             <FormularioEstudiante
                 nombre={nombre}
                 notaPrimerParcial={notaPrimerParcial}
@@ -35,13 +33,11 @@ const CalcularNotas: React.FC = () => {
                 onAgregarEstudiante={agregarEstudiante}
                 editando={editando}
             />
-
             <CRUDEstudiantes
                 estudiantes={estudiantes}
                 onEditar={editarEstudiante}
                 onEliminar={eliminarEstudiante}
             />
-
             <Resultado estudiantes={estudiantes} onEditar={editarEstudiante} onEliminar={eliminarEstudiante} />
         </div>
     );

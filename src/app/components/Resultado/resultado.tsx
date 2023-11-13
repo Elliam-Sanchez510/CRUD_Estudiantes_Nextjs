@@ -1,7 +1,6 @@
 'use client'
-
 import React from 'react';
-import TablaEstudiantes from './tablaEstudiantes';
+import TablaEstudiantes from '../CRUDEstudiantes/tablaEstudiantes';
 
 interface ResultadoProps {
     estudiantes: Estudiante[];
