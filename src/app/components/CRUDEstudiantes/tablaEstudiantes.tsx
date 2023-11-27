@@ -30,7 +30,7 @@ const TablaEstudiantes: React.FC<TablaEstudiantesProps> = ({ estudiantes, onEdit
                         <td className="border px-4 py-2">{estudiante.aprobado}</td>
                         <td className="border px-4 py-2">
                             <button
-                                className="px-2 py-1 bg-yellow-500 text-white rounded hover:bg-yellow-700"
+                                className="px-2 py-1 bg-blue-500 text-white rounded hover:bg-blue-700"
                                 onClick={() => onEditar(estudiante.id)}
                             >
                                 Editar

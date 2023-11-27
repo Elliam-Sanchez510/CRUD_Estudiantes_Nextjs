@@ -2,7 +2,6 @@
 import React from 'react';
 import useGestionEstudiantes from '../data/useGestionEstudiantes';
 import FormularioEstudiante from './formularioEstudiante';
-import CRUDEstudiantes from '../CRUDEstudiantes/crudEstudiante';
 import Resultado from '../Resultado/resultado';
 
 const CalcularNotas: React.FC = () => {
@@ -33,11 +32,7 @@ const CalcularNotas: React.FC = () => {
                 onAgregarEstudiante={agregarEstudiante}
                 editando={editando}
             />
-            <CRUDEstudiantes
-                estudiantes={estudiantes}
-                onEditar={editarEstudiante}
-                onEliminar={eliminarEstudiante}
-            />
+           
             <Resultado estudiantes={estudiantes} onEditar={editarEstudiante} onEliminar={eliminarEstudiante} />
         </div>
     );

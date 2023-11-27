@@ -1,4 +1,3 @@
-// useGestionEstudiantes.ts
 import { useState } from 'react';
 
 const useGestionEstudiantes = () => {
